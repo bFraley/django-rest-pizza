@@ -1,10 +1,10 @@
 from django.db import models
 
-class Pizza(model.Model):
+class Pizza(models.Model):
     name = models.CharField(max_length=30)
     price = models.CharField(max_length=10)
 
-class Topping(model.Model):
+class Topping(models.Model):
     name = models.CharField(max_length=30)
     price = models.CharField(max_length=10)
 
