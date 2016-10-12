@@ -7,5 +7,4 @@ class Pizza(models.Model):
 class Topping(models.Model):
     name = models.CharField(max_length=30)
     price = models.CharField(max_length=10)
-
-
+    pizza = models.ForeignKey(Pizza, null=True)

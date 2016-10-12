@@ -10,3 +10,4 @@ class ToppingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Topping
         fields = ('name', 'price',)
+        
