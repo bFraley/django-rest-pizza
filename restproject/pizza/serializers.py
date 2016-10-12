@@ -6,18 +6,18 @@ class PizzaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pizza
-        fields = ('name', 'price', 'pizza_count')
+        fields = ('name', 'price',)
 
-    def get_pizza_count(self, pizza):
-        return pizza.pizza_set.count()
+    #def get_pizza_count(self, pizza):
+    #   return pizza.pizza_set.count()
 
 class ToppingSerializer(serializers.ModelSerializer):
     topping_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Topping
-        fields = ('name', 'price', 'topping_count')
+        fields = ('name', 'price',)
 
-    def get_topping_count(self, topping):
-        return topping.topping_set.count()
+    #def get_topping_count(self, topping):
+    #    return topping.topping_set.count()
 
