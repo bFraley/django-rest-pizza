@@ -8,6 +8,12 @@ class PizzaViewSet(viewsets.ModelViewSet):
     serializer_class = PizzaSerializer
     queryset = Pizza.objects.all()
 
+    def get_queryset(self):
+        query = self.request.query_params.get('q', None)
+        if query:
+            self.queryset = self.queryset.filter(title__icontains = query)
+        return self.queryset
+
 
 class ToppingViewSet(viewsets.ModelViewSet):
     serializer_class = ToppingSerializer
